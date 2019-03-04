@@ -1,0 +1,11 @@
+/IdServe/.vs
+node_modules
+/IdServe/src/IdServe.Admin/node_modules
+/IdServe/src/IdServe.Admin/obj
+/IdServe/src/IdServe.Admin/bin
+/IdServe/src/IdServe.STS.Identity/obj
+/IdServe/src/IdServe.STS.Identity/bin
+/IdServe/src/API/obj
+/IdServe/src/API/bin
+/IdServe/src/WebClient/obj
+/IdServe/src/WebClient/bin
