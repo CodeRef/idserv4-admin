@@ -42,3 +42,13 @@
 2019-03-04 14:35:05.891 +07:00 [ERR] Client secret validation failed for client: mvc.
 2019-03-04 14:37:35.980 +07:00 [ERR] Client secret validation failed for client: mvc.
 2019-03-04 15:08:24.471 +07:00 [ERR] Client secret validation failed for client: mvc.
+2019-03-04 15:53:38.512 +07:00 [ERR] Invalid scope: api2
+2019-03-04 15:53:38.552 +07:00 [ERR] Request validation failed
+2019-03-04 15:57:43.828 +07:00 [ERR] Invalid scope: api2
+2019-03-04 15:57:43.875 +07:00 [ERR] Request validation failed
+2019-03-04 15:58:29.237 +07:00 [ERR] Invalid scope: api2
+2019-03-04 15:58:29.285 +07:00 [ERR] Request validation failed
+2019-03-04 16:00:30.178 +07:00 [ERR] Invalid scope: api2
+2019-03-04 16:00:30.214 +07:00 [ERR] Request validation failed
+2019-03-04 16:01:26.258 +07:00 [ERR] Invalid scope: api2
+2019-03-04 16:01:26.258 +07:00 [ERR] Request validation failed

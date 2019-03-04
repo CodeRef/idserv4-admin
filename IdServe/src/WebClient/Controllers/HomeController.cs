@@ -47,5 +47,16 @@ namespace WebClient.Controllers
             ViewBag.Json = JArray.Parse(content).ToString();
             return View();
         }
+        public async Task<IActionResult> CallApi2()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var content = await client.GetStringAsync("http://localhost:5003/api/values");
+
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View();
+        }
     }
 }
