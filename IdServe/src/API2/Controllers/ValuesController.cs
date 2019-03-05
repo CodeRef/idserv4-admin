@@ -6,15 +6,15 @@ namespace API2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+
     public class ValuesController : ControllerBase
     {
         // GET api/values
         [HttpGet]
-      
+        [Authorize]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "web api 2 value1", "web api 2 value2" };
         }
 
         // GET api/values/5

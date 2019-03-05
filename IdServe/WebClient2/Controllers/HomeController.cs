@@ -58,5 +58,27 @@ namespace WebClient.Controllers
             ViewBag.Json = JArray.Parse(content).ToString();
             return View();
         }
+        public async Task<IActionResult> CocoA()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var content = await client.GetStringAsync("http://localhost:5003/api/cocoa");
+
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View("CallApi2");
+        }
+        public async Task<IActionResult> CocoAGold()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var content = await client.GetStringAsync("http://localhost:5003/api/cocoa/GetByGoldAccount");
+
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View();
+        }
     }
 }

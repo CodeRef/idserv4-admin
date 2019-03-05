@@ -10,3 +10,13 @@
 2019-03-05 10:09:44.031 +07:00 [ERR] Request validation failed
 2019-03-05 10:09:57.163 +07:00 [ERR] Invalid scope: api2
 2019-03-05 10:09:57.163 +07:00 [ERR] Request validation failed
+2019-03-05 13:18:24.875 +07:00 [ERR] Requested scope not allowed: api2
+2019-03-05 13:18:24.915 +07:00 [ERR] Request validation failed
+2019-03-05 13:22:33.889 +07:00 [ERR] Requested scope not allowed: api2
+2019-03-05 13:22:33.889 +07:00 [ERR] Request validation failed
+2019-03-05 13:23:08.977 +07:00 [ERR] Requested scope not allowed: api2
+2019-03-05 13:23:08.977 +07:00 [ERR] Request validation failed
+2019-03-05 13:23:19.197 +07:00 [ERR] Requested scope not allowed: api2
+2019-03-05 13:23:19.198 +07:00 [ERR] Request validation failed
+2019-03-05 13:24:01.254 +07:00 [ERR] Requested scope not allowed: api2
+2019-03-05 13:24:01.254 +07:00 [ERR] Request validation failed
