@@ -11,3 +11,4 @@ C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Debug\netcoreapp2.2\API2.AssemblyIn
 C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Debug\netcoreapp2.2\API2.RazorTargetAssemblyInfo.cache
 C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Debug\netcoreapp2.2\API2.dll
 C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Debug\netcoreapp2.2\API2.pdb
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Debug\netcoreapp2.2\API2.csprojAssemblyReference.cache
