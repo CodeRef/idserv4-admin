@@ -42,7 +42,7 @@ namespace WebClient.Controllers
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            var content = await client.GetStringAsync("http://localhost:5001/api/values");
+            var content = await client.GetStringAsync("http://localhost:5012/api/values");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View();
@@ -53,31 +53,36 @@ namespace WebClient.Controllers
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            var content = await client.GetStringAsync("http://localhost:5003/api/values");
+            var content = await client.GetStringAsync("http://localhost:5013/api/values");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View();
         }
-        public async Task<IActionResult> CocoA()
+        public async Task<IActionResult> CocoAStandard()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            var content = await client.GetStringAsync("http://localhost:5003/api/cocoa");
+            var content = await client.GetStringAsync("http://localhost:5013/api/cocoastandard");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("CallApi2");
         }
-        public async Task<IActionResult> CocoAGold()
+        public async Task<IActionResult> CocoABronze()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            var content = await client.GetStringAsync("http://localhost:5003/api/cocoa/GetByGoldAccount");
+            var content = await client.GetStringAsync("http://localhost:5013/api/cocoabronze");
 
             ViewBag.Json = JArray.Parse(content).ToString();
+            return View("CallApi2");
+        }
+        [Authorize("Founder")]
+        public async Task<IActionResult> StandardUser()
+        {
             return View();
         }
     }

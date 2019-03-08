@@ -15,7 +15,6 @@ C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.Ra
 C:\CodeRef\idserv-admin\IdServe\WebClient2\bin\Debug\netcoreapp2.2\WebClient2.pdb
 C:\CodeRef\idserv-admin\IdServe\WebClient2\bin\Debug\netcoreapp2.2\WebClient2.Views.dll
 C:\CodeRef\idserv-admin\IdServe\WebClient2\bin\Debug\netcoreapp2.2\WebClient2.Views.pdb
-C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.csprojAssemblyReference.cache
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\Razor\Views\Home\CallApi.g.cshtml.cs
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\Razor\Views\Home\CallApi2.g.cshtml.cs
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
@@ -30,3 +29,5 @@ C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.Vi
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.dll
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.pdb
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.csproj.CopyComplete
+C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.csprojAssemblyReference.cache
+C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\Razor\Views\Home\StandardUser.g.cshtml.cs

@@ -41,10 +41,10 @@ namespace WebClient
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.SignInScheme = "Cookies";
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = "http://idserve.excel.com:5010";
                     options.RequireHttpsMetadata = false;
 
-                    options.ClientId = "mvc";
+                    options.ClientId = "mvc-client1";
                     options.ClientSecret = "wut123";
                     options.ResponseType = "code id_token";
 
@@ -52,7 +52,7 @@ namespace WebClient
                     options.GetClaimsFromUserInfoEndpoint = true;
 
                     options.Scope.Add("api1");
-                    options.Scope.Add("api2");
+                    options.Scope.Add("api3");
                     options.Scope.Add("offline_access");
                     options.ClaimActions.MapJsonKey("website", "website");
                 });

@@ -1,4 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
 <h1>Home</h1>
+@{
+
+    var role = ((System.Security.Claims.ClaimsIdentity)User.Identity).HasClaim("role", "Standard");
+}
+@if (User.HasClaim("role", "Standard"))
+{
+    <b>Logged in</b>
+}

@@ -42,7 +42,7 @@ namespace WebClient.Controllers
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            var content = await client.GetStringAsync("http://localhost:5001/api/values");
+            var content = await client.GetStringAsync("http://localhost:5012/api/values");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View();
@@ -53,7 +53,7 @@ namespace WebClient.Controllers
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            var content = await client.GetStringAsync("http://localhost:5003/api/values");
+            var content = await client.GetStringAsync("http://localhost:5013/api/values");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View();

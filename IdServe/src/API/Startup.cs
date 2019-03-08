@@ -32,7 +32,7 @@ namespace API
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", options =>
                 {
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = "http://idserve.excel.com:5010";
                     options.RequireHttpsMetadata = false;
 
                     options.Audience = "api1";

@@ -1,0 +1,14 @@
+C:\CodeRef\idserv-admin\IdServe\src\API2\bin\Release\netcoreapp2.2\API2.deps.json
+C:\CodeRef\idserv-admin\IdServe\src\API2\bin\Release\netcoreapp2.2\API2.runtimeconfig.json
+C:\CodeRef\idserv-admin\IdServe\src\API2\bin\Release\netcoreapp2.2\API2.runtimeconfig.dev.json
+C:\CodeRef\idserv-admin\IdServe\src\API2\bin\Release\netcoreapp2.2\API2.dll
+C:\CodeRef\idserv-admin\IdServe\src\API2\bin\Release\netcoreapp2.2\API2.pdb
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.csprojAssemblyReference.cache
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.csproj.CoreCompileInputs.cache
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.RazorAssemblyInfo.cache
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.RazorAssemblyInfo.cs
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.AssemblyInfoInputs.cache
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.AssemblyInfo.cs
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.RazorTargetAssemblyInfo.cache
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.dll
+C:\CodeRef\idserv-admin\IdServe\src\API2\obj\Release\netcoreapp2.2\API2.pdb

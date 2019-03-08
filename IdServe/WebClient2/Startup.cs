@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Threading.Tasks;
+using IdentityModel;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace WebClient2
 {
@@ -34,7 +32,16 @@ namespace WebClient2
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //var guestPolicy = new AuthorizationPolicyBuilder()
+            //    .RequireAuthenticatedUser()
+            //    .RequireClaim("scope", "role")
+            //    .Build();
+
+            //services.AddMvc(options =>
+            //{
+            //    //options.Filters.Add(new AuthorizeFilter(guestPolicy));
+            //}).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             services.AddAuthentication(options =>
@@ -46,21 +53,35 @@ namespace WebClient2
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.SignInScheme = "Cookies";
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = "http://idserve.excel.com:5010";
                     options.RequireHttpsMetadata = false;
 
-                    options.ClientId = "webclient2";
+                    options.ClientId = "mvc-client2";
                     options.ClientSecret = "wut123";
                     options.ResponseType = "code id_token";
 
                     options.SaveTokens = true;
+                    options.ClaimActions.MapAllExcept("iss", "nbf", "exp", "aud", "nonce", "iat", "c_hash");
                     options.GetClaimsFromUserInfoEndpoint = true;
 
-                    //options.Scope.Add("api1");
-                    options.Scope.Add("api2");
+                    options.Scope.Add("api3");
                     options.Scope.Add("offline_access");
                     options.ClaimActions.MapJsonKey("website", "website");
                 });
+
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("Policy1", policy1 =>
+            //    {
+            //        policy1.RequireAuthenticatedUser();
+            //        policy1.RequireClaim("role", "Standard");
+            //        //policy1.RequireClaim("role", "role2");
+            //        //policy1.RequireClaim("role", "role3");
+            //        policy1.Build();
+            //    });
+            //});
+            services.AddAuthorization(options => options.AddPolicy("Founder", policy => policy.RequireClaim("name", "StandardUser")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
