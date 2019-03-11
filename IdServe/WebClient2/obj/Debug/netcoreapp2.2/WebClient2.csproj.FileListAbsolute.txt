@@ -31,3 +31,4 @@ C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.pd
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.csproj.CopyComplete
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\WebClient2.csprojAssemblyReference.cache
 C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\Razor\Views\Home\StandardUser.g.cshtml.cs
+C:\CodeRef\idserv-admin\IdServe\WebClient2\obj\Debug\netcoreapp2.2\Razor\Views\Home\StandardUserRoleOnly.g.cshtml.cs

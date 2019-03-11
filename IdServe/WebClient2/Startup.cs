@@ -1,5 +1,7 @@
 using IdentityModel;
+using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,7 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http;
 
 namespace WebClient2
 {
@@ -31,25 +35,28 @@ namespace WebClient2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
-            //var guestPolicy = new AuthorizationPolicyBuilder()
-            //    .RequireAuthenticatedUser()
-            //    .RequireClaim("scope", "role")
-            //    .Build();
-
-            //services.AddMvc(options =>
-            //{
-            //    //options.Filters.Add(new AuthorizeFilter(guestPolicy));
-            //}).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMvc();
+            services.AddHttpClient();
+
+            services.AddSingleton<IDiscoveryCache>(r =>
+            {
+                var factory = r.GetRequiredService<IHttpClientFactory>();
+                return new DiscoveryCache("http://idserve.excel.com:5010", () => factory.CreateClient());
+            });
+
+
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
             services.AddAuthentication(options =>
             {
-                options.DefaultScheme = "Cookies";
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = "oidc";
             })
-                .AddCookie("Cookies")
+                .AddCookie(options =>
+                {
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                    options.Cookie.Name = "Cookies";
+                })
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.SignInScheme = "Cookies";
@@ -66,20 +73,14 @@ namespace WebClient2
 
                     options.Scope.Add("api3");
                     options.Scope.Add("offline_access");
-                    options.ClaimActions.MapJsonKey("website", "website");
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        NameClaimType = JwtClaimTypes.Name,
+                        RoleClaimType = JwtClaimTypes.Role,
+                    };
                 });
 
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("Policy1", policy1 =>
-            //    {
-            //        policy1.RequireAuthenticatedUser();
-            //        policy1.RequireClaim("role", "Standard");
-            //        //policy1.RequireClaim("role", "role2");
-            //        //policy1.RequireClaim("role", "role3");
-            //        policy1.Build();
-            //    });
-            //});
+          
             services.AddAuthorization(options => options.AddPolicy("Founder", policy => policy.RequireClaim("name", "StandardUser")));
 
         }

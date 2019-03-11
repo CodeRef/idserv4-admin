@@ -85,5 +85,9 @@ namespace WebClient.Controllers
         {
             return View();
         }
+        [Authorize(Roles = "Standard")]
+        public async Task<IActionResult> StandardUserRoleOnly() {
+            return View();
+        }
     }
 }

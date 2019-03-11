@@ -6,6 +6,15 @@
 <p>Use this page to detail your site's privacy policy.</p>
 @using Microsoft.AspNetCore.Authentication
 
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Logged in as: @User.Identity.Name</h1>
+}
+else
+{
+    <h1>Not Logged In</h1>
+}
+
 <h2>Claims</h2>
 
 <dl>

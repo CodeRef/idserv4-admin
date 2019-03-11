@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "StandardUserRoleOnly";
+}
+
+<h1>StandardUserRoleOnly</h1>
+
+<pre>
+   options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        NameClaimType = JwtClaimTypes.Name,
+                        RoleClaimType = JwtClaimTypes.Role,
+                    };
+</pre>
